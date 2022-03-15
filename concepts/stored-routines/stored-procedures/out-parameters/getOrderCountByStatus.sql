@@ -11,5 +11,7 @@ END //
 DELIMITER ;
 CALL getOrderCountByStatus('Shipped', @total);
 SELECT @total;
+CALL getOrderCountByStatus('Cancelled', @total_cancelled);
+SELECT @total_cancelled;
 CALL getOrderCountByStatus('in process', @total_in_process);
 SELECT @total_in_process AS orders_in_progress;
