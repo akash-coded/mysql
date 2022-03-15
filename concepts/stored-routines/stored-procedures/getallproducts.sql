@@ -5,3 +5,5 @@ BEGIN
 END //
 DELIMITER ;
 CALL getAllProducts();
+SHOW CREATE PROCEDURE getAllProducts;
+SHOW PROCEDURE STATUS LIKE 'getAllProducts';
