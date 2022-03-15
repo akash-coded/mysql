@@ -53,7 +53,7 @@ WHERE EXISTS(
         GROUP BY orderNumber
         HAVING SUM(priceEach * quantityOrdered) > 60000
     );
--- 7. 
+-- 7. Write a query that gets the top five products by sales revenue in 2003 from the orders and orderdetails tables
 SELECT 
     productCode, 
     ROUND(SUM(quantityOrdered * priceEach)) sales
@@ -66,7 +66,7 @@ WHERE
 GROUP BY productCode
 ORDER BY sales DESC
 LIMIT 5;
--- 8. 
+-- 8. use the result of the previous query as a derived table called top5product2003 and join it with the products table using the productCode column.. Then, find out the productName and sales of the top 5 products in 2003.
 SELECT 
     productName, sales
 FROM
@@ -83,7 +83,11 @@ FROM
     LIMIT 5) top5products2003
 INNER JOIN
     products USING (productCode);
--- 9. 
+-- 9. Suppose you have to label the customers who bought products in 2003 into 3 groups: platinum, gold, and silver with the following conditions:
+-- Platinum customers who have orders with the volume greater than 100K.
+-- Gold customers who have orders with the volume between 10K and 100K.
+-- Silver customers who have orders with the volume less than 10K.
+-- To form this query, you first need to put each customer into the respective group using CASE expression and GROUP BY
 SELECT 
     customerNumber,
     ROUND(SUM(quantityOrdered * priceEach)) sales,
@@ -99,7 +103,7 @@ FROM
 WHERE
     YEAR(shippedDate) = 2003
 GROUP BY customerNumber;
--- 10.
+-- 10.Use the previous query as the derived table to know the number of customers in each group: platinum, gold, and silver
 SELECT 
     customerGroup, 
     COUNT(cg.customerGroup) AS groupCount
@@ -118,4 +122,5 @@ FROM
     WHERE
         YEAR(shippedDate) = 2003
     GROUP BY customerNumber) cg
-GROUP BY cg.customerGroup;    
+GROUP BY cg.customerGroup;
+  
