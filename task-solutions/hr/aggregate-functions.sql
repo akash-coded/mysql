@@ -1,10 +1,17 @@
 USE `hr`;
+
 -- 1. Write a query to list the number of jobs available in the employees table.
-SELECT COUNT(DISTINCT job_id) FROM employees;
+SELECT COUNT(DISTINCT job_id) 
+FROM employees;
+
 -- 2. Write a query to get the total salaries payable to employees.
-SELECT SUM(salary) AS total_salary FROM employees;
+SELECT SUM(salary) AS total_salary 
+FROM employees;
+
 -- 3. Write a query to get the minimum salary from employees table.
-SELECT MIN(salary) AS min_salary FROM employees;
+SELECT MIN(salary) AS min_salary 
+FROM employees;
+
 -- 4. Write a query to get the maximum salary of an employee working as a Programmer.
 SELECT MAX(SALARY) AS MAX_PROGRAMMER_SALARY
 FROM employees
