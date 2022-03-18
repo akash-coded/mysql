@@ -1,12 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.0.10.7
--- http://www.phpmyadmin.net
---
--- Host: localhost
--- Generation Time: Mar 20, 2015 at 01:43 AM
--- Server version: 5.5.34-cll-lve
--- PHP Version: 5.4.23
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -17,8 +8,14 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `wrpracti_bookinfo`
+-- Database: `hr`
 --
+
+DROP DATABASE IF EXISTS `hr`;
+
+CREATE DATABASE IF NOT EXISTS `hr`;
+
+USE `hr`;
 
 -- --------------------------------------------------------
 
