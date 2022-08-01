@@ -1,9 +1,0 @@
-DELIMITER //
-CREATE PROCEDURE getAllProducts()
-BEGIN
-        SELECT * FROM products;
-END //
-DELIMITER ;
-CALL getAllProducts();
-SHOW CREATE PROCEDURE getAllProducts;
-SHOW PROCEDURE STATUS LIKE 'getAllProducts';
