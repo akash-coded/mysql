@@ -1,6 +1,6 @@
 -- MySQL ROLLUP clause is used to generate subtotals and grand totals.
 -- The following statement creates a new table named sales that stores the order values summarized by product lines and years.
-CREATE TABLE sales
+CREATE TABLE sales;
 SELECT productLine,
     YEAR(orderDate) orderYear,
     SUM(quantityOrdered * priceEach) orderValue

@@ -50,8 +50,8 @@ SELECT YEAR(orderDate) AS year,
 FROM orders
     INNER JOIN orderdetails USING (orderNumber)
 WHERE status = 'Shipped'
-GROUP BY year
-HAVING year > 2003;
+    AND YEAR(orderDate) > 2003
+GROUP BY year;
 -- The following query extracts the year from the order date. It first uses the year as an alias of the expression YEAR(orderDate) and then uses the year alias in the GROUP BY clause.
 SELECT YEAR(orderDate) AS year,
     COUNT(orderNumber)
