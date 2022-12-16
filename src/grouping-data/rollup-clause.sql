@@ -43,9 +43,42 @@ FROM table_name
 GROUP BY c1,
     c2,
     c3 WITH ROLLUP;
--- The ROLLUP generates multiple grouping sets based on the columns or expressions specified in the GROUP BY clause. For example:
+-- The ROLLUP generates multiple grouping sets based on the columns or expressions specified in the GROUP BY clause. 
+-- The ROLLUP clause generates not only the subtotals but also the grand total of the order values. For example:
 SELECT productLine,
     SUM(orderValue) totalOrderValue
 FROM sales
 GROUP BY productline WITH ROLLUP;
--- The ROLLUP clause generates not only the subtotals but also the grand total of the order values.
+-- If you have more than one column specified in the GROUP BY clause, the ROLLUP clause assumes a hierarchy among the input columns.
+-- For example:
+-- GROUP BY c1, c2, c3 WITH ROLLUP
+-- The ROLLUP assumes that there is the following hierarchy:
+-- c1 > c2 > c3
+-- And it generates the following grouping sets: -- (c1, c2, c3)
+-- (c1, c2)
+-- (c1)
+-- ()
+-- And in case you have two columns specified in the GROUP BY clause:
+-- GROUP BY c1, c2 WITH ROLLUP
+-- then the ROLLUP generates the following grouping sets:
+-- (c1, c2)
+-- (c1)
+-- ()
+-- See the following query example. The ROLLUP generates the subtotal row every time the product line changes and the grand total at the end of the result.
+-- The hierarchy in this case is:
+productLine > orderYear
+SELECT productLine,
+    orderYear,
+    SUM(orderValue) totalOrderValue
+FROM sales
+GROUP BY productline,
+    orderYear WITH ROLLUP;
+-- If you reverse the hierarchy, the ROLLUP generates the subtotal every time the year changes and the grand total at the end of the result set.
+-- The hierarchy in this example is:
+-- orderYear > productLine
+SELECT orderYear,
+    productLine,
+    SUM(orderValue) totalOrderValue
+FROM sales
+GROUP BY orderYear,
+    productline WITH ROLLUP;
