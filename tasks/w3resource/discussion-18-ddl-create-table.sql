@@ -42,8 +42,8 @@ CREATE TABLE job_history (
 -- +-----------------+--------------+------+-----+---------+-------+
 CREATE TABLE IF NOT EXISTS employees (
     EMPLOYEE_ID decimal(6, 0) NOT NULL PRIMARY KEY,
-    FIRST_NAME varchar(20) DEFAULT NULL,
-    LAST_NAME varchar(25) NOT NULL,
+    FIRST_NAME varchar(20) NOT NULL,
+    LAST_NAME varchar(25) DEFAULT NULL,
     EMAIL varchar(25) NOT NULL,
     PHONE_NUMBER varchar(20) DEFAULT NULL,
     HIRE_DATE date NOT NULL,
