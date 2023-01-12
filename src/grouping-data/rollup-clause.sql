@@ -1,6 +1,7 @@
+-- Active: 1647295028338@@127.0.0.1@3307@classicmodels
 -- MySQL ROLLUP clause is used to generate subtotals and grand totals.
 -- The following statement creates a new table named sales that stores the order values summarized by product lines and years.
-CREATE TABLE sales;
+CREATE TABLE sales
 SELECT productLine,
     YEAR(orderDate) orderYear,
     SUM(quantityOrdered * priceEach) orderValue
@@ -54,7 +55,8 @@ GROUP BY productline WITH ROLLUP;
 -- GROUP BY c1, c2, c3 WITH ROLLUP
 -- The ROLLUP assumes that there is the following hierarchy:
 -- c1 > c2 > c3
--- And it generates the following grouping sets: -- (c1, c2, c3)
+-- And it generates the following grouping sets: 
+-- (c1, c2, c3)
 -- (c1, c2)
 -- (c1)
 -- ()
@@ -66,7 +68,7 @@ GROUP BY productline WITH ROLLUP;
 -- ()
 -- See the following query example. The ROLLUP generates the subtotal row every time the product line changes and the grand total at the end of the result.
 -- The hierarchy in this case is:
-productLine > orderYear
+-- productLine > orderYear
 SELECT productLine,
     orderYear,
     SUM(orderValue) totalOrderValue
@@ -82,3 +84,15 @@ SELECT orderYear,
 FROM sales
 GROUP BY orderYear,
     productline WITH ROLLUP;
+-- ROLLUP with GROUP BY on 3 columns
+SELECT productLine,
+    orderYear,
+    CASE
+        WHEN orderYear >= 2004 THEN 1
+        ELSE 2
+    END AS col3,
+    SUM(orderValue) totalOrderValue
+FROM sales
+GROUP BY productline,
+    orderYear,
+    col3 WITH ROLLUP;
