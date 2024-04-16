@@ -1,16 +1,3 @@
-CREATE TRIGGER after_worker_update 
-    AFTER UPDATE ON worker
-    FOR EACH ROW 
-UPDATE title
-SET 
-    worker_ref_id = NEW.worker_id
-WHERE
-    worker_ref_id = OLD.worker_id;
-
-
-UPDATE worker 
-SET 
-    worker_id = 100,
-WHERE
-    first_name = 'Niharika';
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:2cc14aece2ff67a1ffe6b7a46f7d1ce09cfef4e10c12fcd198af41c19e02afd0
+size 486

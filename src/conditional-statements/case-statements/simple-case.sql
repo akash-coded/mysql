@@ -1,31 +1,3 @@
-DELIMITER $$
-
-CREATE PROCEDURE getCustomerShipping(
-	IN  pCustomerNUmber INT, 
-	OUT pShipping       VARCHAR(50)
-)
-BEGIN
-    DECLARE customerCountry VARCHAR(100);
-
-SELECT 
-    country
-INTO customerCountry FROM
-    customers
-WHERE
-    customerNumber = pCustomerNUmber;
-
-    CASE customerCountry
-		WHEN  'USA' THEN
-		   SET pShipping = '2-day Shipping';
-		WHEN 'Canada' THEN
-		   SET pShipping = '3-day Shipping';
-		ELSE
-		   SET pShipping = '5-day Shipping';
-	END CASE;
-END $$
-
-DELIMITER ;
-
-CALL GetCustomerShipping(112,@shipping);
-
-SELECT @shipping;
+version https://git-lfs.github.com/spec/v1
+oid sha256:8032397957ee6b8aae201c674b453d41229b830874492c4cfc589d846bbf3455
+size 532

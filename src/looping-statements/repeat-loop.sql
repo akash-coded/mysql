@@ -1,26 +1,3 @@
-DELIMITER //
-
-CREATE PROCEDURE repeatLoopDemo()
-BEGIN
-        DECLARE x INT;
-        DECLARE str VARCHAR(255);
-
-        SET x = 0;
-        SET str = '';
-
-        REPEAT
-                SET x = x + 1;
-                IF (x mod 2 <> 0) THEN
-                        SET str = CONCAT(str, x, ', ');                        
-                END IF;
-        UNTIL x > 5
-        END REPEAT;
-
-        SELECT str;
-END //
-
-DELIMITER ;
-
-CALL repeatLoopDemo();
-
-DROP PROCEDURE repeatLoopDemo;
+version https://git-lfs.github.com/spec/v1
+oid sha256:0c6516fe053124dc6c6da795239fd77d12f431614646bc45bb50617623041bce
+size 504

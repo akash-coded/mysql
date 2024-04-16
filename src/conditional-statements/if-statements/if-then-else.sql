@@ -1,25 +1,3 @@
-DELIMITER $$
-
-CREATE PROCEDURE findPlatinumOrNot(
-    IN  pCustomerNumber INT, 
-    OUT pCustomerLevel  VARCHAR(20)
-)
-BEGIN
-    DECLARE credit DECIMAL DEFAULT 0;
-
-    SELECT creditLimit 
-    INTO credit
-    FROM customers
-    WHERE customerNumber = pCustomerNumber;
-
-    IF credit > 50000 THEN
-        SET pCustomerLevel = 'PLATINUM';
-    ELSE
-        SET pCustomerLevel = 'NOT PLATINUM';
-    END IF;
-END$$
-
-DELIMITER ;
-
-CALL findPlatinumOrNot(447, @level);
-SELECT @level;
+version https://git-lfs.github.com/spec/v1
+oid sha256:8f8cb34bfff10d2ec82e70f0c47c4514c196f26e23eec28a80377d2b187b3418
+size 446

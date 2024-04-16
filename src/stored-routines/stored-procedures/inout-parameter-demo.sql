@@ -1,14 +1,3 @@
-DELIMITER //
-CREATE PROCEDURE setCounter(
-        INOUT counter INT,
-        IN step INT
-)
-BEGIN
-        SET counter = counter + step;
-END //
-DELIMITER ;
-SET @myCounter = 1;
-CALL setCounter(@myCounter, 2);
-CALL setCounter(@myCounter, 3);
-CALL setCounter(@myCounter, 4);
-SELECT @myCounter;
+version https://git-lfs.github.com/spec/v1
+oid sha256:236ecbd86cc3c0553689c2134a79157c926b9240caafe2452e444eca4519e518
+size 301

@@ -1,17 +1,3 @@
-DELIMITER //
-CREATE PROCEDURE getOrderCountByStatus(
-        IN orderStatus VARCHAR(255),
-        OUT total INT
-)
-BEGIN
-        SELECT COUNT(orderNumber) INTO total 
-        FROM orders 
-        WHERE status = orderStatus;
-END //
-DELIMITER ;
-CALL getOrderCountByStatus('Shipped', @total);
-SELECT @total;
-CALL getOrderCountByStatus('Cancelled', @total_cancelled);
-SELECT @total_cancelled;
-CALL getOrderCountByStatus('in process', @total_in_process);
-SELECT @total_in_process AS orders_in_progress;
+version https://git-lfs.github.com/spec/v1
+oid sha256:5068dd57139ce5e0cc81988901605263eafd74c8f855360f063e1e27b4be4055
+size 501

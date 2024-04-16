@@ -1,28 +1,3 @@
-DELIMITER //
-
-CREATE FUNCTION customerLevel(
-    credit DECIMAL(10, 2)
-)
-RETURNS VARCHAR(20)
-DETERMINISTIC
-BEGIN
-    DECLARE customerLevel VARCHAR(20);
-
-    IF credit > 50000 THEN
-        SET customerLevel = 'PLATINUM';
-    ELSEIF (credit <= 50000 AND credit >= 10000) THEN
-        SET customerLevel = 'GOLD';
-    ELSE
-        SET customerLevel = 'SILVER';
-    END IF;
-
-    RETURN customerLevel;
-END //
-
-DELIMITER ;
-
-SELECT customerName, creditLimit, customerLevel(creditLimit)
-FROM customers
-ORDER BY customerName;
-
-SHOW FUNCTION STATUS WHERE db = 'classicmodels';
+version https://git-lfs.github.com/spec/v1
+oid sha256:50fd67d3d03cbec9c6c566909c3522d51c5f447f9eab09782f59d33c4b1d1089
+size 599

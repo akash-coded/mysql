@@ -1,24 +1,3 @@
-DELIMITER $$
-
-CREATE PROCEDURE labelCustomerPlatinum(
-    IN  pCustomerNumber INT, 
-    OUT pCustomerLevel  VARCHAR(20)
-)
-BEGIN
-    DECLARE credit DECIMAL(10,2) DEFAULT 0;
-
-    SELECT creditLimit 
-    INTO credit
-    FROM customers
-    WHERE customerNumber = pCustomerNumber;
-
-    IF credit > 50000 THEN
-        SET pCustomerLevel = 'PLATINUM';
-    END IF;
-END $$
-
-DELIMITER ;
-
-CALL labelCustomerPlatinum(141, @level);
-
-SELECT @level;
+version https://git-lfs.github.com/spec/v1
+oid sha256:bffff682f6d985371f845537f3789e0defbd9f3690c019e187b3afc4995e1106
+size 457

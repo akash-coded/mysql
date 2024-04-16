@@ -1,12 +1,3 @@
-DELIMITER //
-CREATE PROCEDURE getTotalOrders()
-BEGIN
-        DECLARE totalOrders INT DEFAULT 0;
-
-        SELECT COUNT(*) INTO totalOrders FROM orders;
-
-        SELECT totalOrders;
-END //
-DELIMITER ;
-CALL getTotalOrders();
-DROP PROCEDURE getTotalOrders;
+version https://git-lfs.github.com/spec/v1
+oid sha256:626b010d3cff85281b689f9ae80862f806fea79e333c8441cb3a2ef9c161166a
+size 265
