@@ -1,0 +1,36 @@
+{
+    "options": {
+        "schema": "airportdb",
+        "table": "employee",
+        "columns": [
+            "employee_id",
+            "firstname",
+            "lastname",
+            "birthdate",
+            "sex",
+            "street",
+            "city",
+            "zip",
+            "country",
+            "emailaddress",
+            "telephoneno",
+            "salary",
+            "department",
+            "username",
+            "password"
+        ],
+        "primaryIndex": "employee_id",
+        "compression": "zstd",
+        "defaultCharacterSet": "utf8mb4",
+        "fieldsTerminatedBy": "\t",
+        "fieldsEnclosedBy": "",
+        "fieldsOptionallyEnclosed": false,
+        "fieldsEscapedBy": "\\",
+        "linesTerminatedBy": "\n"
+    },
+    "triggers": [],
+    "includesData": true,
+    "includesDdl": true,
+    "extension": "tsv.zst",
+    "chunking": true
+}

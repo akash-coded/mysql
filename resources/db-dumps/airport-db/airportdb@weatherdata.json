@@ -1,0 +1,30 @@
+{
+    "options": {
+        "schema": "airportdb",
+        "table": "weatherdata",
+        "columns": [
+            "log_date",
+            "time",
+            "station",
+            "temp",
+            "humidity",
+            "airpressure",
+            "wind",
+            "weather",
+            "winddirection"
+        ],
+        "primaryIndex": "log_date",
+        "compression": "zstd",
+        "defaultCharacterSet": "utf8mb4",
+        "fieldsTerminatedBy": "\t",
+        "fieldsEnclosedBy": "",
+        "fieldsOptionallyEnclosed": false,
+        "fieldsEscapedBy": "\\",
+        "linesTerminatedBy": "\n"
+    },
+    "triggers": [],
+    "includesData": true,
+    "includesDdl": true,
+    "extension": "tsv.zst",
+    "chunking": true
+}

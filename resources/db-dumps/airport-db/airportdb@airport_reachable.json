@@ -1,0 +1,23 @@
+{
+    "options": {
+        "schema": "airportdb",
+        "table": "airport_reachable",
+        "columns": [
+            "airport_id",
+            "hops"
+        ],
+        "primaryIndex": "airport_id",
+        "compression": "zstd",
+        "defaultCharacterSet": "utf8mb4",
+        "fieldsTerminatedBy": "\t",
+        "fieldsEnclosedBy": "",
+        "fieldsOptionallyEnclosed": false,
+        "fieldsEscapedBy": "\\",
+        "linesTerminatedBy": "\n"
+    },
+    "triggers": [],
+    "includesData": true,
+    "includesDdl": true,
+    "extension": "tsv.zst",
+    "chunking": true
+}

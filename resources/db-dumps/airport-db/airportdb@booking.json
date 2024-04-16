@@ -1,0 +1,26 @@
+{
+    "options": {
+        "schema": "airportdb",
+        "table": "booking",
+        "columns": [
+            "booking_id",
+            "flight_id",
+            "seat",
+            "passenger_id",
+            "price"
+        ],
+        "primaryIndex": "booking_id",
+        "compression": "zstd",
+        "defaultCharacterSet": "utf8mb4",
+        "fieldsTerminatedBy": "\t",
+        "fieldsEnclosedBy": "",
+        "fieldsOptionallyEnclosed": false,
+        "fieldsEscapedBy": "\\",
+        "linesTerminatedBy": "\n"
+    },
+    "triggers": [],
+    "includesData": true,
+    "includesDdl": true,
+    "extension": "tsv.zst",
+    "chunking": true
+}

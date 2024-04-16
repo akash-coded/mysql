@@ -1,0 +1,30 @@
+{
+    "dumper": "mysqlsh Ver 8.0.25 for Linux on x86_64 - for MySQL 8.0.25 (MySQL Community Server (GPL))",
+    "version": "1.0.2",
+    "origin": "dumpSchemas",
+    "schemas": [
+        "airportdb"
+    ],
+    "basenames": {
+        "airportdb": "airportdb"
+    },
+    "defaultCharacterSet": "utf8mb4",
+    "tzUtc": true,
+    "bytesPerChunk": 200000000,
+    "user": "dan",
+    "hostname": "mysql8",
+    "server": "6wfzlbxndj9354ba",
+    "serverVersion": "8.0.26-cloud",
+    "binlogFile": "binary-log.001788",
+    "binlogPosition": 196,
+    "gtidExecuted": "7991d092-e0af-11eb-8a0f-020017067e8c:1-314",
+    "gtidExecutedInconsistent": false,
+    "consistent": true,
+    "mdsCompatibility": true,
+    "compatibilityOptions": [
+        "create_invisible_pks",
+        "strip_definers",
+        "strip_restricted_grants"
+    ],
+    "begin": "2021-07-15 17:00:46"
+}

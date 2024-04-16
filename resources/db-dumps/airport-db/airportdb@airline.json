@@ -1,0 +1,25 @@
+{
+    "options": {
+        "schema": "airportdb",
+        "table": "airline",
+        "columns": [
+            "airline_id",
+            "iata",
+            "airlinename",
+            "base_airport"
+        ],
+        "primaryIndex": "airline_id",
+        "compression": "zstd",
+        "defaultCharacterSet": "utf8mb4",
+        "fieldsTerminatedBy": "\t",
+        "fieldsEnclosedBy": "",
+        "fieldsOptionallyEnclosed": false,
+        "fieldsEscapedBy": "\\",
+        "linesTerminatedBy": "\n"
+    },
+    "triggers": [],
+    "includesData": true,
+    "includesDdl": true,
+    "extension": "tsv.zst",
+    "chunking": true
+}

@@ -1,0 +1,30 @@
+{
+    "options": {
+        "schema": "airportdb",
+        "table": "passengerdetails",
+        "columns": [
+            "passenger_id",
+            "birthdate",
+            "sex",
+            "street",
+            "city",
+            "zip",
+            "country",
+            "emailaddress",
+            "telephoneno"
+        ],
+        "primaryIndex": "passenger_id",
+        "compression": "zstd",
+        "defaultCharacterSet": "utf8mb4",
+        "fieldsTerminatedBy": "\t",
+        "fieldsEnclosedBy": "",
+        "fieldsOptionallyEnclosed": false,
+        "fieldsEscapedBy": "\\",
+        "linesTerminatedBy": "\n"
+    },
+    "triggers": [],
+    "includesData": true,
+    "includesDdl": true,
+    "extension": "tsv.zst",
+    "chunking": true
+}

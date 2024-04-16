@@ -1,0 +1,29 @@
+{
+    "options": {
+        "schema": "airportdb",
+        "table": "flight",
+        "columns": [
+            "flight_id",
+            "flightno",
+            "from",
+            "to",
+            "departure",
+            "arrival",
+            "airline_id",
+            "airplane_id"
+        ],
+        "primaryIndex": "flight_id",
+        "compression": "zstd",
+        "defaultCharacterSet": "utf8mb4",
+        "fieldsTerminatedBy": "\t",
+        "fieldsEnclosedBy": "",
+        "fieldsOptionallyEnclosed": false,
+        "fieldsEscapedBy": "\\",
+        "linesTerminatedBy": "\n"
+    },
+    "triggers": [],
+    "includesData": true,
+    "includesDdl": true,
+    "extension": "tsv.zst",
+    "chunking": true
+}

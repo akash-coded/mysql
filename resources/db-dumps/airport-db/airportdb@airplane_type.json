@@ -1,0 +1,24 @@
+{
+    "options": {
+        "schema": "airportdb",
+        "table": "airplane_type",
+        "columns": [
+            "type_id",
+            "identifier",
+            "description"
+        ],
+        "primaryIndex": "type_id",
+        "compression": "zstd",
+        "defaultCharacterSet": "utf8mb4",
+        "fieldsTerminatedBy": "\t",
+        "fieldsEnclosedBy": "",
+        "fieldsOptionallyEnclosed": false,
+        "fieldsEscapedBy": "\\",
+        "linesTerminatedBy": "\n"
+    },
+    "triggers": [],
+    "includesData": true,
+    "includesDdl": true,
+    "extension": "tsv.zst",
+    "chunking": true
+}
