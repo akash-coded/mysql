@@ -1,15 +1,3 @@
-ALTER TABLE Patient
-MODIFY P_Name VARCHAR(35) NOT NULL;
-ALTER TABLE Patient_Treatment
-ADD Dosage INTEGER(99) DEFAULT 0 NOT NULL;
-ALTER TABLE Treatment
-MODIFY T_Name Treatment_Name VARCHAR(30);
-DROP TABLE Treatment;
-ALTER TABLE Patient_Treatment DROP FOREIGN KEY PT_PID_FK;
-<<
-OR >>
-ALTER TABLE Patient_Treatment DROP INDEX PT_PID_FK;
-ALTER TABLE Patient_Treatment DROP FOREIGN KEY PT_TID_FK;
-<<
-OR >>
-ALTER TABLE Patient_Treatment DROP INDEX PT_TID_FK;
+version https://git-lfs.github.com/spec/v1
+oid sha256:fda5c41858bf50d80781e41aa4324e8d15d36bcac9252513c8a60b5803e17e3f
+size 466
